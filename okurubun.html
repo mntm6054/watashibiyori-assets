@@ -62,6 +62,18 @@
   .cta{text-align:center}
   .key{display:inline-block;color:var(--night);background:var(--gold-l);border-radius:8px;padding:0 8px;font-weight:700}
   .btn{display:block;background:var(--line);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:14px 16px;margin:14px 0 0;font-size:16px;box-shadow:0 8px 20px rgba(6,199,85,.25)}
+  .idx a{display:flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none;padding:10px 12px;margin:0 0 8px;border-radius:12px;background:rgba(251,245,234,.06);border:1px solid rgba(217,184,114,.25);font-size:14.5px;line-height:1.5}
+  .idx a b{color:var(--gold-l);font-weight:700}
+  .idx a span.go{margin-left:auto;color:var(--gold);font-size:12px;white-space:nowrap}
+  .idx img{width:26px;height:26px;flex:none}
+  .check{counter-reset:c;list-style:none;padding:0;margin:0}
+  .check li{position:relative;padding:8px 0 8px 40px;border-bottom:1px dashed rgba(217,184,114,.3);font-size:15px}
+  .check li::before{counter-increment:c;content:counter(c);position:absolute;left:0;top:8px;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold-l);text-align:center;line-height:26px;font-size:13px}
+  .swap{margin:0 0 12px}
+  .swap .from{font-size:14px;color:#f3e6ea;text-decoration:line-through;text-decoration-color:rgba(233,184,198,.7)}
+  .swap .arrow{color:var(--gold);font-size:12px;margin:2px 0}
+  .fill{background:rgba(251,245,234,.08);border:1px dashed var(--gold);border-radius:12px;padding:10px 12px;margin:10px 0 6px;font-size:15px;color:#fff}
+  .fill u{text-decoration:none;border-bottom:1px solid var(--gold-l);padding:0 2.5em}
   footer{text-align:center;font-size:12px;color:var(--sub);padding:8px 16px 32px}
 </style>
 </head>
@@ -75,6 +87,14 @@
     <p class="for">LINEに登録してくれたあなたへ</p>
   </header>
 
+  <section class="sec idx">
+    <h2><img src="moon/15.png" alt="">あなたの月のタイプから選ぶ</h2>
+    <a href="#s02"><img src="moon/00.png" alt=""><span><b>新月さん</b>（言えずにいる）</span><span class="go">02・03へ</span></a>
+    <a href="#s01"><img src="moon/04.png" alt=""><span><b>三日月さん</b>（返事を待っている）</span><span class="go">01・眠れない夜へ</span></a>
+    <a href="#s04"><img src="moon/07.png" alt=""><span><b>半月さん</b>（温度差がある）</span><span class="go">04へ</span></a>
+    <a href="#s03"><img src="moon/15.png" alt=""><span><b>満月さん</b>（会いたい気持ちでいっぱい）</span><span class="go">03・05へ</span></a>
+  </section>
+
   <section class="sec">
     <h2><img src="moon/00.png" alt="">はじめに</h2>
     <p>送るか、待つか。迷う夜は、正解の一文を探すより「自分が後悔しない一文」を選ぶほうが、気持ちが軽くなります。</p>
@@ -84,12 +104,16 @@
   </section>
 
   <section class="sec night">
-    <h2><img src="moon/02.png" alt="">返事を待って眠れない夜に</h2>
+    <h2 id="nemu"><img src="moon/02.png" alt="">返事を待って眠れない夜に</h2>
     <ul class="list">
       <li>通知をオフにして、朝に1回だけ見ると決める</li>
       <li>送りたい文は、LINEではなくメモに書く。「送信」は朝の自分にまかせる（わたし日和の「送る前の一行メモ」）</li>
       <li>今夜は月を見て、スマホを置く。それだけで十分です</li>
     </ul>
+    <p style="margin-top:12px"><b style="color:var(--gold-l)">一行メモの書き方</b></p>
+    <p>メモには、この形で1行だけ書いてみてください。</p>
+    <div class="fill">わたしが今これを送りたいのは、<u></u>だから。</div>
+    <p class="note">朝に読み返して、その理由がまだ自分にとって大切なら、送っていい合図です。</p>
   </section>
 
   <section class="sec">
@@ -102,16 +126,27 @@
     </ol>
   </section>
 
+  <section class="sec">
+    <h2><img src="moon/05.png" alt="">送る前の30秒チェック</h2>
+    <p>送信ボタンを押す前に、3つだけ確かめてみてください。</p>
+    <ol class="check">
+      <li>何のために送るのか、一言で言える？</li>
+      <li>相手が、スタンプ1つでも返せる文になっている？</li>
+      <li>もし返事が来なくても、送ったことを後悔しない？</li>
+    </ol>
+    <p class="note" style="margin-top:10px">3つとも「はい」なら、送っていい一文です。</p>
+  </section>
+
   <div class="orn">TEMPLATES</div>
 
   <section class="sec">
-    <h2><img src="moon/06.png" alt=""><span><span class="no">01</span>既読のまま返事がない時</span></h2>
+    <h2><img src="moon/06.png" alt=""><span><span class="no" id="s01">01</span>既読のまま返事がない時</span></h2>
     <div class="msg">この前のは、気にしないでね〜！<button class="copy">コピー</button></div>
     <p class="tip">返しそびれた気まずさを、こちらから外してあげる一文。相手は「ごめん！」と返しやすくなります</p>
   </section>
 
   <section class="sec">
-    <h2><img src="moon/08.png" alt=""><span><span class="no">02</span>しばらく連絡が途切れている人に</span></h2>
+    <h2><img src="moon/08.png" alt=""><span><span class="no" id="s02">02</span>しばらく連絡が途切れている人に</span></h2>
     <div class="msg">久しぶり〜！元気にしてる？<button class="copy">コピー</button></div>
     <p class="tip">目的は「元気か知りたい」だけ。どんな相手にも送れて、「元気だよ」の一言で返せます</p>
     <div class="msg">寒くなってきたけど、体調くずしてない？<button class="copy">コピー</button></div>
@@ -120,20 +155,20 @@
   </section>
 
   <section class="sec">
-    <h2><img src="moon/10.png" alt=""><span><span class="no">03</span>会いたい、誘いたい時</span></h2>
+    <h2><img src="moon/10.png" alt=""><span><span class="no" id="s03">03</span>会いたい、誘いたい時</span></h2>
     <div class="msg">〇〇行きたいんだけど、1人だと行きづらくて笑 興味あったら一緒にどう？ 日にちは合わせられるから、行けそうな日があったら教えてね！<button class="copy">コピー</button></div>
     <p class="tip">誘う理由が「1人だと行きづらい」なので、恋の気配が出ません。「日にちは合わせられる」で都合を気にしなくてよくなり、「行けそうな日があったら」で行かない選択も残るので、相手は気軽に答えられます</p>
   </section>
 
   <section class="sec">
-    <h2><img src="moon/12.png" alt=""><span><span class="no">04</span>温度差を感じる時・返事がそっけなかった時</span></h2>
+    <h2><img src="moon/12.png" alt=""><span><span class="no" id="s04">04</span>温度差を感じる時・返事がそっけなかった時</span></h2>
     <div class="msg">忙しい時にごめんね！また連絡するね<button class="copy">コピー</button></div>
     <p class="tip">ここでは、あえて質問をしません。いったん区切ることで、追いかける形にならずにすみます</p>
     <p class="tip">次に送るのは、1週間ほどあけてから。02の「元気にしてる？」くらいの軽さで</p>
   </section>
 
   <section class="sec">
-    <h2><img src="moon/13.png" alt=""><span><span class="no">05</span>年末年始の3つの節目</span></h2>
+    <h2><img src="moon/13.png" alt=""><span><span class="no" id="s05">05</span>年末年始の3つの節目</span></h2>
     <span class="label">12月</span>
     <div class="msg">年内にごはんでもどう？ 忘年会的な笑<button class="copy">コピー</button></div>
     <p class="tip">「クリスマス」と言わずに「忘年会」。誘う目的がはっきりしていて、恋の気配が出ません</p>
@@ -145,7 +180,7 @@
   </section>
 
   <section class="sec">
-    <h2><img src="moon/14.png" alt=""><span><span class="no">06</span>送らないほうがいい一文</span></h2>
+    <h2><img src="moon/14.png" alt=""><span><span class="no" id="s06">06</span>送らないほうがいい一文</span></h2>
     <ul class="list ng">
       <li>「なんで返事くれないの？」「怒ってる？」「忙しい？」（責める・確かめる）</li>
       <li>「さみしい」「会いたい」「〇〇のこと考えてた」（恋の気配が強く、相手が身構える）</li>
@@ -156,7 +191,16 @@
   </section>
 
   <section class="sec">
-    <h2><img src="moon/15.png" alt=""><span><span class="no">07</span>返事が来たら</span></h2>
+    <h2><img src="moon/14.png" alt="">重い一文 → 軽い一文 言い換え表</h2>
+    <div class="swap"><div class="from">なんで返事くれないの？</div><div class="arrow">▼</div><div class="msg">この前のは、気にしないでね〜！<button class="copy">コピー</button></div></div>
+    <div class="swap"><div class="from">会いたい</div><div class="arrow">▼</div><div class="msg">〇〇行きたいんだけど、1人だと行きづらくて笑 興味あったら一緒にどう？ 日にちは合わせられるから、行けそうな日があったら教えてね！<button class="copy">コピー</button></div></div>
+    <div class="swap"><div class="from">怒ってる？</div><div class="arrow">▼</div><p>送らずに、一行メモへ。どうしても送るなら</p><div class="msg">忙しい時にごめんね！また連絡するね<button class="copy">コピー</button></div></div>
+    <div class="swap"><div class="from">さみしい</div><div class="arrow">▼</div><p>送らずに、一行メモへ</p></div>
+    <div class="swap"><div class="from">やっと返事きた！うれしい！</div><div class="arrow">▼</div><div class="msg">よかった！最近どんな感じ？<button class="copy">コピー</button></div></div>
+  </section>
+
+  <section class="sec">
+    <h2><img src="moon/15.png" alt=""><span><span class="no" id="s07">07</span>返事が来たら</span></h2>
     <ul class="list">
       <li>相手の言葉を1つだけ拾って返す（「元気だよ〜」には「よかった！最近どんな感じ？」）</li>
       <li>待っていた気持ちは書かない（「やっと返事きた」は書かない）</li>
@@ -165,7 +209,7 @@
   </section>
 
   <section class="sec night">
-    <h2><img src="moon/22.png" alt=""><span><span class="no">08</span>送らないと決めた夜に</span></h2>
+    <h2><img src="moon/22.png" alt=""><span><span class="no" id="s08">08</span>送らないと決めた夜に</span></h2>
     <p>送らないことも、立派な一歩です。</p>
     <p>メモに書いた一文は消さずに残しておいて、送りたくなった日に読み返してみてください。</p>
   </section>
@@ -178,6 +222,8 @@
     <p>今の流れと、あなたに合う「次に送る一文」を一緒に考えます。</p>
     <a class="btn" href="https://lin.ee/tjOetSK">LINEで【ことのは鑑定】と送る</a>
   </section>
+
+  <p class="note" style="text-align:center;margin:18px 0 0">☾ このページは、スクリーンショットかブックマークで保存しておくと、迷った夜にすぐ開けます。</p>
 </main>
 <footer>わたし日和｜占いによる個人的な読み解きの提供です</footer>
 <script>
