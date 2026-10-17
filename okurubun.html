@@ -6,53 +6,85 @@
 <meta name="robots" content="noindex">
 <title>送る一文テンプレート集｜わたし日和</title>
 <meta name="description" content="送るか待つか迷った時の「送る一文」テンプレート集（LINE登録の特典）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#f7f1ea;--card:#fffdf9;--ink:#3b3340;--sub:#7a6f78;--rose:#c98f8f;--rose-d:#a86f72;--night:#2f3552;--gold:#c9a45c;--line:#06c755;--border:#eadfd4}
+  :root{
+    --night:#141a3a; --night2:#1f2756; --navy:#2a3168; --gold:#d9b872; --gold-l:#f1dda5;
+    --sakura:#e9b8c6; --sakura-d:#c98fa3; --cream:#fbf5ea; --ink:#2f2a3a; --sub:#c9c3dc; --line:#06c755;
+  }
   *{box-sizing:border-box}
   html,body{margin:0}
-  body{background:var(--bg);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
-  header{background:linear-gradient(180deg,#1c2140 0%,#2e2f5e 45%,#5a4f86 80%,#a98bb4 100%);color:#fff;text-align:center;padding:40px 16px 34px}
-  header .brand{font-size:12px;letter-spacing:.14em;opacity:.85}
-  header .moon{font-size:38px;line-height:1;margin:10px 0 6px}
-  header h1{font-size:21px;line-height:1.55;margin:6px 0 4px}
-  header p{font-size:13px;margin:0;opacity:.9}
-  .wrap{max-width:520px;margin:0 auto;padding:20px 16px 48px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 18px;margin:0 0 16px}
-  .card h2{font-size:16px;margin:0 0 10px;color:var(--night)}
-  .card h2 .n{display:inline-block;min-width:26px;height:26px;line-height:26px;border-radius:50%;background:var(--rose);color:#fff;text-align:center;font-size:13px;margin-right:6px}
-  .card p{margin:0 0 8px;font-size:15px}
-  .label{font-size:12px;color:var(--rose-d);font-weight:bold;margin:10px 0 2px}
-  .msg{background:#fff;border:1.5px solid var(--border);border-radius:14px 14px 14px 4px;padding:10px 14px;font-size:15px;margin:4px 0 6px}
-  .tip{font-size:13px;color:var(--sub);margin:2px 0 0}
-  .memo{background:var(--night);color:#f3ecdf;border:0}
-  .memo h2{color:var(--gold)}
+  body{color:var(--cream);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.9;-webkit-text-size-adjust:100%;background:var(--night)}
+  /* 夜空：星と、桜色の雲 */
+  .sky{position:fixed;inset:0;z-index:-1;
+    background:
+      radial-gradient(1.2px 1.2px at 20% 30%,#fff 50%,transparent 51%) 0 0/140px 140px,
+      radial-gradient(1px 1px at 70% 60%,rgba(255,255,255,.8) 50%,transparent 51%) 0 0/110px 110px,
+      radial-gradient(1.6px 1.6px at 40% 80%,rgba(241,221,165,.75) 50%,transparent 51%) 0 0/190px 190px,
+      radial-gradient(1px 1px at 85% 15%,rgba(255,230,240,.9) 50%,transparent 51%) 0 0/230px 230px,
+      radial-gradient(ellipse 80% 30% at 10% 105%,rgba(233,184,198,.28),transparent 70%),
+      radial-gradient(ellipse 70% 25% at 95% -5%,rgba(233,184,198,.18),transparent 70%),
+      linear-gradient(180deg,#141a3a 0%,#1f2756 45%,#2a3168 100%)}
+  .wrap{max-width:520px;margin:0 auto;padding:0 16px 56px}
+  /* 表紙 */
+  .cover{text-align:center;padding:40px 0 18px}
+  .brand{font-size:12px;letter-spacing:.3em;color:var(--gold-l)}
+  .card-img{display:block;width:150px;margin:18px auto 20px;border-radius:12px;border:1px solid rgba(217,184,114,.6);box-shadow:0 0 0 6px rgba(217,184,114,.08),0 18px 40px rgba(0,0,0,.45),0 0 60px rgba(233,184,198,.18)}
+  h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:23px;line-height:1.6;margin:0 0 6px;color:#fff;letter-spacing:.04em}
+  h1 small{display:block;font-size:14px;color:var(--gold-l);font-weight:500;letter-spacing:.12em;margin-bottom:4px}
+  .for{font-size:13px;color:var(--sub);margin:8px 0 0}
+  .orn{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--gold);margin:22px 0 6px;font-size:12px;letter-spacing:.3em}
+  .orn::before,.orn::after{content:"";height:1px;width:60px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .orn::after{transform:scaleX(-1)}
+  /* 章 */
+  .sec{position:relative;margin:18px 0;padding:22px 18px 18px;border-radius:18px;background:rgba(20,26,58,.62);border:1px solid rgba(217,184,114,.45);box-shadow:inset 0 0 0 4px rgba(20,26,58,.6),inset 0 0 0 5px rgba(217,184,114,.18)}
+  .sec h2{font-family:"Shippori Mincho",serif;font-size:17px;font-weight:700;margin:0 0 12px;color:#fff;display:flex;align-items:center;gap:10px;line-height:1.5}
+  .sec h2 img{width:34px;height:34px;flex:none}
+  .sec h2 .no{font-size:12px;color:var(--gold);letter-spacing:.1em;display:block;font-family:"Zen Maru Gothic",sans-serif;font-weight:500}
+  .sec p{margin:0 0 8px;font-size:15px}
+  .note{font-size:13px;color:var(--sub)}
+  ul.list,ol.list{margin:0;padding-left:1.3em;font-size:15px}
+  .list li{margin:0 0 8px}
+  .list li::marker{color:var(--gold)}
+  .night{background:linear-gradient(160deg,rgba(42,49,104,.85),rgba(20,26,58,.85))}
+  .label{display:inline-block;font-size:12px;color:var(--night);background:var(--gold-l);border-radius:99px;padding:0 10px;margin:10px 0 4px;font-weight:700}
+  /* 送る一文（LINEの吹き出し風） */
+  .msg{position:relative;background:var(--cream);color:var(--ink);border-radius:18px 18px 18px 6px;padding:12px 14px;margin:6px 0 4px;font-size:15px;line-height:1.7;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .copy{display:block;margin:6px 0 0 auto;background:transparent;border:1px solid rgba(47,42,58,.25);color:#6a6078;border-radius:99px;padding:2px 12px;font-size:12px;font-family:inherit;cursor:pointer}
+  .copy.done{border-color:var(--sakura-d);color:var(--sakura-d)}
+  .tip{font-size:13.5px;color:var(--sub);margin:6px 0 4px;padding-left:1.2em;text-indent:-1.2em}
+  .tip::before{content:"☾ ";color:var(--gold)}
+  .ng li{color:#f3e6ea}
+  .ng li::marker{content:"✕  ";color:var(--sakura)}
+  /* 最後の案内 */
   .cta{text-align:center}
-  .btn{display:block;background:var(--line);color:#fff;text-decoration:none;font-weight:bold;border-radius:999px;padding:14px 16px;margin:12px 0 0;font-size:16px}
-  .key{display:inline-block;background:#fdf6f4;border:1px dashed var(--rose);border-radius:8px;padding:0 8px;font-weight:bold}
-  .list{margin:0;padding-left:1.3em;font-size:15px}
-  .list li{margin:0 0 6px}
-  .memo .list{color:#f3ecdf}
-  footer{text-align:center;font-size:12px;color:var(--sub);padding:0 16px 32px}
+  .key{display:inline-block;color:var(--night);background:var(--gold-l);border-radius:8px;padding:0 8px;font-weight:700}
+  .btn{display:block;background:var(--line);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:14px 16px;margin:14px 0 0;font-size:16px;box-shadow:0 8px 20px rgba(6,199,85,.25)}
+  footer{text-align:center;font-size:12px;color:var(--sub);padding:8px 16px 32px}
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">わたし日和</div>
-  <div class="moon">🌙</div>
-  <h1>送るか待つか迷った時の<br>「送る一文」テンプレート集</h1>
-  <p>LINEに登録してくれたあなたへ</p>
-</header>
+<div class="sky"></div>
 <main class="wrap">
-  <section class="card">
-    <h2>はじめに</h2>
+  <header class="cover">
+    <div class="brand">WATASHI BIYORI</div>
+    <img class="card-img" src="cards/back.jpg" alt="わたし日和のカード">
+    <h1><small>送るか待つか、迷う夜に</small>「送る一文」テンプレート集</h1>
+    <p class="for">LINEに登録してくれたあなたへ</p>
+  </header>
+
+  <section class="sec">
+    <h2><img src="moon/00.png" alt="">はじめに</h2>
     <p>送るか、待つか。迷う夜は、正解の一文を探すより「自分が後悔しない一文」を選ぶほうが、気持ちが軽くなります。</p>
     <p>返さないと決めている人の気持ちは、どんな一文でも変えられません。このテンプレートができるのは、「返したい気持ちが少しでもある人が返しやすくなること」と「送ったあなたが後悔しないこと」です。</p>
     <p>どの文も、2人の思い出や共通の友だちがなくても、相手との関係がどんな形でも送れるものだけにしています。</p>
-    <p class="tip">送るか送らないかを決めるのは、いつもあなたです。</p>
+    <p class="note">送るか送らないかを決めるのは、いつもあなたです。</p>
   </section>
 
-  <section class="card memo">
-    <h2>返事を待って眠れない夜に</h2>
+  <section class="sec night">
+    <h2><img src="moon/02.png" alt="">返事を待って眠れない夜に</h2>
     <ul class="list">
       <li>通知をオフにして、朝に1回だけ見ると決める</li>
       <li>送りたい文は、LINEではなくメモに書く。「送信」は朝の自分にまかせる（わたし日和の「送る前の一行メモ」）</li>
@@ -60,8 +92,8 @@
     </ul>
   </section>
 
-  <section class="card">
-    <h2>送る一文の4つの約束</h2>
+  <section class="sec">
+    <h2><img src="moon/04.png" alt="">送る一文の4つの約束</h2>
     <ol class="list">
       <li>何のために送ったのか、一目で分かる</li>
       <li>友だちに送るくらいのフランクさで。「会いたい」「さみしい」など恋の気配は出さない</li>
@@ -70,49 +102,51 @@
     </ol>
   </section>
 
-  <section class="card">
-    <h2><span class="n">1</span>既読のまま返事がない時</h2>
-    <div class="msg">この前のは、気にしないでね〜！</div>
-    <p class="tip">→ 返しそびれた気まずさを、こちらから外してあげる一文。相手は「ごめん！」と返しやすくなります</p>
+  <div class="orn">TEMPLATES</div>
+
+  <section class="sec">
+    <h2><img src="moon/06.png" alt=""><span><span class="no">01</span>既読のまま返事がない時</span></h2>
+    <div class="msg">この前のは、気にしないでね〜！<button class="copy">コピー</button></div>
+    <p class="tip">返しそびれた気まずさを、こちらから外してあげる一文。相手は「ごめん！」と返しやすくなります</p>
   </section>
 
-  <section class="card">
-    <h2><span class="n">2</span>しばらく連絡が途切れている人に</h2>
-    <div class="msg">久しぶり〜！元気にしてる？</div>
-    <p class="tip">→ 目的は「元気か知りたい」だけ。どんな相手にも送れて、「元気だよ」の一言で返せます</p>
-    <div class="msg">寒くなってきたけど、体調くずしてない？</div>
-    <p class="tip">（季節に合わせて：暑い日が続くけど など）</p>
-    <p class="tip">→ 目的は気づかいだけ。季節の話なので、思い出や共通の話題がなくても使えます</p>
+  <section class="sec">
+    <h2><img src="moon/08.png" alt=""><span><span class="no">02</span>しばらく連絡が途切れている人に</span></h2>
+    <div class="msg">久しぶり〜！元気にしてる？<button class="copy">コピー</button></div>
+    <p class="tip">目的は「元気か知りたい」だけ。どんな相手にも送れて、「元気だよ」の一言で返せます</p>
+    <div class="msg">寒くなってきたけど、体調くずしてない？<button class="copy">コピー</button></div>
+    <p class="note">（季節に合わせて：暑い日が続くけど など）</p>
+    <p class="tip">目的は気づかいだけ。季節の話なので、思い出や共通の話題がなくても使えます</p>
   </section>
 
-  <section class="card">
-    <h2><span class="n">3</span>会いたい、誘いたい時</h2>
-    <div class="msg">〇〇行きたいんだけど、1人だと行きづらくて笑 興味あったら一緒にどう？ なかったら断ってOK！</div>
-    <p class="tip">→ 誘う理由が「1人だと行きづらい」なので、恋の気配が出ません。断ってOKを先に書くので、相手は気軽に答えられます</p>
+  <section class="sec">
+    <h2><img src="moon/10.png" alt=""><span><span class="no">03</span>会いたい、誘いたい時</span></h2>
+    <div class="msg">〇〇行きたいんだけど、1人だと行きづらくて笑 興味あったら一緒にどう？ なかったら断ってOK！<button class="copy">コピー</button></div>
+    <p class="tip">誘う理由が「1人だと行きづらい」なので、恋の気配が出ません。断ってOKを先に書くので、相手は気軽に答えられます</p>
   </section>
 
-  <section class="card">
-    <h2><span class="n">4</span>温度差を感じる時・返事がそっけなかった時</h2>
-    <div class="msg">忙しい時にごめんね！また連絡するね</div>
-    <p class="tip">→ ここでは、あえて質問をしません。いったん区切ることで、追いかける形にならずにすみます</p>
-    <p class="tip">→ 次に送るのは、1週間ほどあけてから。2の「元気にしてる？」くらいの軽さで</p>
+  <section class="sec">
+    <h2><img src="moon/12.png" alt=""><span><span class="no">04</span>温度差を感じる時・返事がそっけなかった時</span></h2>
+    <div class="msg">忙しい時にごめんね！また連絡するね<button class="copy">コピー</button></div>
+    <p class="tip">ここでは、あえて質問をしません。いったん区切ることで、追いかける形にならずにすみます</p>
+    <p class="tip">次に送るのは、1週間ほどあけてから。02の「元気にしてる？」くらいの軽さで</p>
   </section>
 
-  <section class="card">
-    <h2><span class="n">5</span>年末年始の3つの節目</h2>
-    <div class="label">12月</div>
-    <div class="msg">年内にごはんでもどう？ 忘年会的な笑</div>
-    <p class="tip">→ 「クリスマス」と言わずに「忘年会」。誘う目的がはっきりしていて、恋の気配が出ません</p>
-    <div class="label">年末</div>
-    <div class="msg">今年もお世話になりました〜！来年もよろしく🙌</div>
-    <div class="label">あけおめ</div>
-    <div class="msg">あけおめ〜！今年もよろしく🙌</div>
-    <p class="tip">→ 年末年始のあいさつは、送る理由がいちばんはっきりしている一文。返すのも当たり前なので、しばらく連絡していない相手にも使えます</p>
+  <section class="sec">
+    <h2><img src="moon/13.png" alt=""><span><span class="no">05</span>年末年始の3つの節目</span></h2>
+    <span class="label">12月</span>
+    <div class="msg">年内にごはんでもどう？ 忘年会的な笑<button class="copy">コピー</button></div>
+    <p class="tip">「クリスマス」と言わずに「忘年会」。誘う目的がはっきりしていて、恋の気配が出ません</p>
+    <span class="label">年末</span>
+    <div class="msg">今年もお世話になりました〜！来年もよろしく🙌<button class="copy">コピー</button></div>
+    <span class="label">あけおめ</span>
+    <div class="msg">あけおめ〜！今年もよろしく🙌<button class="copy">コピー</button></div>
+    <p class="tip">年末年始のあいさつは、送る理由がいちばんはっきりしている一文。返すのも当たり前なので、しばらく連絡していない相手にも使えます</p>
   </section>
 
-  <section class="card">
-    <h2><span class="n">6</span>送らないほうがいい一文</h2>
-    <ul class="list">
+  <section class="sec">
+    <h2><img src="moon/14.png" alt=""><span><span class="no">06</span>送らないほうがいい一文</span></h2>
+    <ul class="list ng">
       <li>「なんで返事くれないの？」「怒ってる？」「忙しい？」（責める・確かめる）</li>
       <li>「さみしい」「会いたい」「〇〇のこと考えてた」（恋の気配が強く、相手が身構える）</li>
       <li>何のために送ったか分からない一文（「何が言いたいの？」と思わせてしまう）</li>
@@ -121,8 +155,8 @@
     </ul>
   </section>
 
-  <section class="card">
-    <h2><span class="n">7</span>返事が来たら</h2>
+  <section class="sec">
+    <h2><img src="moon/15.png" alt=""><span><span class="no">07</span>返事が来たら</span></h2>
     <ul class="list">
       <li>相手の言葉を1つだけ拾って返す（「元気だよ〜」には「よかった！最近どんな感じ？」）</li>
       <li>待っていた気持ちは書かない（「やっと返事きた」は書かない）</li>
@@ -130,20 +164,31 @@
     </ul>
   </section>
 
-  <section class="card">
-    <h2><span class="n">8</span>送らないと決めた夜に</h2>
+  <section class="sec night">
+    <h2><img src="moon/22.png" alt=""><span><span class="no">08</span>送らないと決めた夜に</span></h2>
     <p>送らないことも、立派な一歩です。</p>
     <p>メモに書いた一文は消さずに残しておいて、送りたくなった日に読み返してみてください。</p>
   </section>
 
-  <section class="card cta">
-    <h2>もっと一緒に考えたい時は</h2>
+  <div class="orn">WATASHI BIYORI</div>
+
+  <section class="sec cta">
+    <h2 style="justify-content:center">もっと一緒に考えたい時は</h2>
     <p>あなたが選んだ3枚で読む、無料の「月のことのは鑑定」は、LINEに<span class="key">ことのは鑑定</span>と送るだけ（おひとり1回）。</p>
     <p>今の流れと、あなたに合う「次に送る一文」を一緒に考えます。</p>
     <a class="btn" href="https://lin.ee/tjOetSK">LINEで【ことのは鑑定】と送る</a>
   </section>
-
 </main>
 <footer>わたし日和｜占いによる個人的な読み解きの提供です</footer>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.parentNode.firstChild.textContent.trim();
+    var ok=function(){b.textContent='コピーしました';b.classList.add('done');setTimeout(function(){b.textContent='コピー';b.classList.remove('done');},1800);};
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,function(){});}
+    else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(a);}
+  });
+});
+</script>
 </body>
 </html>
