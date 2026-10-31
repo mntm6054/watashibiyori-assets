@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>送る前の30秒チェック｜わたし日和</title>
+<meta name="description" content="送るか待つかを、あなたが自分で決めるための「送る前の30秒チェック」（わたし日和のLINE「月の相談室」登録の特典）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* 夜空の上で、1本道の3ステップ（月を選ぶ → カードを引く → 一歩を書く）＋最後にLINE */
+  :root{--night:#141a3a;--navy:#2a3168;--gold:#d9b872;--gold-l:#f1dda5;--sakura:#e9b8c6;--cream:#fbf5ea;--sub:#c9c3dc;--line:#06c755;
+    --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{color:var(--cream);font-family:var(--sans);line-height:1.85;-webkit-text-size-adjust:100%;
+    background:linear-gradient(180deg,#141a3a 0%,#1f2756 45%,#2a3168 100%) fixed;background-color:var(--night)}
+  .wrap{max-width:540px;margin:0 auto;padding:0 16px 56px}
+  .hero{position:relative;margin:0 -16px}
+  .hero img{display:block;width:100%;height:auto}
+  .hero .title{position:absolute;left:16px;top:50%;transform:translateY(-50%);max-width:58%}
+  .brand{font-size:11px;letter-spacing:.3em;color:var(--gold-l)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(19px,5.4vw,26px);line-height:1.5;margin:4px 0 0;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55);text-wrap:balance}
+  h1 small{display:block;font-size:.6em;color:var(--gold-l);font-weight:500}
+  .lead{font-size:15px;margin:18px 0 6px}
+  .who{font-size:13.5px;color:var(--sub);margin:0}
+  .step{margin-top:28px;border:1px solid rgba(217,184,114,.4);border-radius:18px;padding:16px;background:rgba(251,245,234,.05);scroll-margin-top:12px}
+  .step.lock{opacity:.45}
+  .step.lock .body{display:none}
+  .shead{display:flex;gap:10px;align-items:center}
+  .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--night);font-weight:700;display:grid;place-items:center;font-family:var(--serif);font-size:17px}
+  .step.lock .num{background:transparent;border:1px solid var(--gold);color:var(--gold-l)}
+  h2{font-family:var(--serif);font-size:18px;color:#fff;margin:0;line-height:1.5;text-wrap:balance}
+  .hint{font-size:13px;color:var(--sub);margin:6px 0 0 44px}
+  .body{margin-top:12px}
+  .choice{display:grid;gap:8px}
+  .choice button{font:inherit;text-align:left;color:var(--cream);background:rgba(251,245,234,.06);border:1px solid rgba(217,184,114,.45);border-radius:14px;padding:12px;cursor:pointer;line-height:1.6}
+  .choice button b{display:block;font-size:15.5px;color:#fff}
+  .choice button span{display:block;font-size:12.5px;color:var(--sub)}
+  .choice button[aria-pressed="true"]{background:rgba(217,184,114,.22);box-shadow:0 0 0 2px var(--gold) inset}
+  .out{background:rgba(20,26,58,.6);border-radius:12px;padding:12px;margin-top:10px;font-size:14.5px}
+  .out b{color:#fff}
+  .big{display:block;width:100%;font:inherit;font-size:18px;font-weight:700;color:var(--night);background:linear-gradient(180deg,var(--gold-l),var(--gold));border:0;border-radius:16px;padding:18px 12px;cursor:pointer;box-shadow:0 8px 22px rgba(217,184,114,.28);text-align:center;text-decoration:none}
+  .big:disabled{opacity:.5;cursor:default}
+  .big small{display:block;font-size:12px;font-weight:500;opacity:.85}
+  .big.line{background:var(--line);color:#fff;box-shadow:0 8px 22px rgba(6,199,85,.25)}
+  .sub{display:block;width:100%;font:inherit;font-size:14px;color:var(--gold-l);background:transparent;border:1px solid var(--gold);border-radius:999px;padding:10px;margin-top:10px;cursor:pointer}
+  label{display:block;font-size:13.5px;color:var(--gold-l);margin:12px 0 4px}
+  textarea{width:100%;font:inherit;font-size:16px;line-height:1.6;color:#fff;background:rgba(251,245,234,.08);border:1px solid rgba(217,184,114,.45);border-radius:12px;padding:10px;min-height:70px;resize:vertical}
+  .saved{font-size:13px;color:var(--gold-l);min-height:1.4em;margin-top:6px}
+  .log{font-size:13px;color:var(--sub);margin-top:10px}
+  .log ul{padding-left:1.2em;margin:4px 0 0}
+  button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid var(--sakura);outline-offset:2px}
+  .more{margin-top:36px}
+  .more h3{font-family:var(--serif);font-size:16px;color:var(--gold-l);text-align:center;margin:0 0 8px}
+  details{border-bottom:1px solid rgba(217,184,114,.25);padding:12px 2px}
+  summary{cursor:pointer;color:#fff;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"＋ ";color:var(--gold)}
+  details[open] summary::before{content:"－ "}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.7;margin-top:8px}
+  th,td{padding:8px 6px;border-bottom:1px dashed rgba(217,184,114,.28);vertical-align:top;text-align:left}
+  th{color:var(--gold-l);font-weight:500;font-size:12px}
+  td:first-child{color:#fff}
+  .sugg{background:rgba(251,245,234,.07);border:1px solid rgba(217,184,114,.4);border-radius:12px;padding:10px 12px;margin-top:10px}
+  .sugg p{margin:6px 0 0;color:#fff;font-size:15px}
+  .tag{font-size:12px;color:var(--gold-l)}
+  .foot{font-size:12px;color:var(--sub);margin-top:28px}
+  .pic{display:block;width:100%;height:auto;border-radius:14px;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <img src="shitsumon/01_header.jpg" alt="夜空の満月と、3枚のタロットカード" width="1200" height="800">
+    <div class="title">
+      <div class="brand">WATASHI BIYORI</div>
+      <h1><small>送るか待つか、迷った夜に・月とタロットで</small>送る前の30秒チェック</h1>
+    </div>
+  </div>
+
+  <p class="lead">月を選んで、カードを引いて、送る前のLINEをチェック。<br>上から順に進むだけです。カードは、このページの中で引けます。</p>
+  <p class="who">作った人：わたし日和。23歳のころ「既読スルー？」「連絡くれるまで起きてるから。」と送り続けた私が、相手の気持ちを言い切らずに「送るか待つか」を自分で決めるために作りました。</p>
+
+  <section class="step" id="st1">
+    <div class="shead"><div class="num">1</div><h2>今のあなたに、いちばん近い月を選ぶ</h2></div>
+    <p class="hint">例を読んで、近いものを1つ押してください。</p>
+    <div class="body">
+      <div class="choice" id="moonBtns"></div>
+      <div class="out" id="moonOut" hidden></div>
+    </div>
+  </section>
+
+  <section class="step lock" id="st2">
+    <div class="shead"><div class="num">2</div><h2>質問を1つ選んで、カードを1枚引く</h2></div>
+    <p class="hint" id="hint2">①で月を選ぶと、ここに進めます。</p>
+    <div class="body">
+      <div class="choice" id="qBtns"></div>
+      <div style="margin-top:12px"><button class="big" id="drawBtn" type="button" disabled>🃏 カードを1枚引く<small>上の質問を1つ選ぶと押せます</small></button></div>
+      <div class="out" id="cardOut" hidden></div>
+    </div>
+  </section>
+
+  <section class="step lock" id="st3">
+    <div class="shead"><div class="num">3</div><h2>送りたいLINEを貼って、送る前の30秒チェック</h2></div>
+    <p class="hint" id="hint3">②でカードを引くと、ここに進めます。</p>
+    <div class="body">
+      <label for="msgIn">彼に送りたい文を、ここに貼るか書いてください（まだ送らないでね）</label>
+      <textarea id="msgIn" placeholder="例：既読スルー？忙しいの？連絡くれるまで起きてるから。"></textarea>
+      <p class="who" style="margin-top:4px">書いた文は、このページの中だけで見ます。どこにも送られません。</p>
+      <button class="big" id="checkBtn" type="button" style="margin-top:10px">送る前にチェックする</button>
+      <div class="out" id="checkOut" hidden aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="step lock" id="st4">
+    <div class="shead"><div class="num">4</div><h2>あなたのことを、くわしく視てほしい時は</h2></div>
+    <p class="hint" id="hint4">③まで終わったら、ここも読んでみてください。</p>
+    <div class="body">
+      <p style="margin:0">このページのカードは、だれにでも使える読み方です。<br>
+      あなたの言葉を読んだうえで、あなたが選んだ3枚のカードで読む無料の「月のことのは鑑定」があります（おひとり1回・3日以内にLINEでお届け）。</p>
+      <a class="big line" href="https://lin.ee/tjOetSK" style="margin-top:12px">LINE「月の相談室」を開く<small>トークに【ことのは鑑定】と送ってください</small></a>
+    </div>
+  </section>
+
+  <img class="pic" src="shitsumon/06_window.jpg" alt="夜の窓辺のマグカップとノートとカード" width="1000" height="1000" loading="lazy">
+
+  <div class="more">
+    <h3>もっと知りたい人へ</h3>
+    <details><summary>事実と想像を分けるコツ</summary>
+      <table><tr><th>事実（本当に起きたこと）</th><th>想像（わたしが考えていること）</th></tr>
+      <tr><td>返信が3日ない</td><td>嫌われたのかもしれない</td></tr>
+      <tr><td>既読はついている</td><td>わざと返していないのかもしれない</td></tr>
+      <tr><td>前より会う回数が減った</td><td>気持ちが冷めたのかもしれない</td></tr></table>
+      <p class="who" style="margin-top:8px">想像は、まちがいではありません。ただ、事実と混ざったままだと、カードの結果まで不安の材料にしてしまいます。</p>
+    </details>
+    <details><summary>自分で考えやすい質問に、言いかえるコツ</summary>
+      <table><tr><th>聞きたくなる質問</th><th>整理しやすい質問</th></tr>
+      <tr><td>彼は私を好き？</td><td>わたしは、この関係で何を大切にしたい？</td></tr>
+      <tr><td>いつ連絡が来る？</td><td>返事を待つあいだ、わたしが落ち着いてできることは？</td></tr>
+      <tr><td>復縁できる？</td><td>もう一度向き合う前に、わたしが確かめたいことは？</td></tr>
+      <tr><td>送ったら嫌われる？</td><td>送る前に、わたしが一番伝えたいことは何？</td></tr>
+      <tr><td>もう恋できない？</td><td>今のわたしに必要なのは、休むこと？　動くこと？</td></tr></table>
+    </details>
+    <details><summary>大アルカナ22枚の、ひとことの読み方</summary>
+      <table id="arcanaTable"></table>
+      <p class="who" style="margin-top:8px">カードの意味は1つではありません。ここに書いたのは「自分の気持ちと次の一歩」を考えるための読み方の一例です。</p>
+    </details>
+    <details><summary>よくあるつまずき</summary>
+      <p class="who" style="margin-top:8px">・望む答えが出るまで引き直したくなったら、最初の1枚を書き留めてください。<br>・同じことを何度も占う時は、数日あけてください。<br>・こわく見えるカードほど、自分を守るヒントが入っています。<br>・カードの結果だけで、連絡する・別れると決めず、一晩おいてください。</p>
+    </details>
+  </div>
+
+  <p class="foot">※カードは未来を決めるものではなく、あなたが次の一歩を選ぶための材料です。病気・お金・法律のことは、専門の窓口にもご相談ください。<br>わたし日和</p>
+</div>
+<script>
+(function(){
+  var MOONS=[["🌑", "新月さん", "言いたいことがあるのに、言えずにいる", "好きと言えない／誘いたいのに、送る文が決まらない", "送る前に「伝えたい一言」を書き出す時", "言いたい言葉を飲み込んで、胸がいっぱいになっていませんか。", [["この気持ち、伝えても大丈夫？", 0], ["彼はわたしのこと、どう思ってる？", 1], ["送るなら、どんな一言がいい？", 0]]], ["🌒", "三日月さん", "返事を待っていて、落ち着かない", "既読のまま返事が来ない／何度もトーク画面を開いてしまう", "待つあいだ、自分を整える時", "返事を待つ時間は、本当に長く感じますよね。", [["返事は、来る？", 2], ["彼は今、何を考えてる？", 1], ["待つ？　それとも、送る？", 0]]], ["🌓", "半月さん", "ふたりの温度差を感じている", "わたしの方が好きな気がする／返事がそっけない", "合わせる前に、自分のペースを確かめる時", "温度差を感じると、自分ばかり好きな気がして苦しくなりますよね。", [["彼の気持ちは、冷めてしまった？", 1], ["この温度差は、埋まる？", 2], ["このままの関係で、大丈夫？", 0]]], ["🌕", "満月さん", "会いたい気持ちでいっぱい", "今すぐ会いたい／長い文を送りたくなっている", "気持ちがあふれる前に、一晩おく時", "会いたい気持ちがあふれそうな夜、よくがんばっていますね。", [["「会いたい」って送ってもいい？", 0], ["彼も、わたしに会いたいと思ってる？", 1], ["この恋、前に進めていい？", 0]]], ["🌘", "下弦の月さん", "少し疲れて、休みたい", "恋のことを考えるのに疲れた／婚活や駆け引きに少し疲れてきた", "今日は送らず、休むことを選んでいい時", "恋に疲れてしまうほど、ちゃんと向き合ってきたんですね。", [["この恋、続けていい？", 0], ["もう少しがんばる？　それとも休む？", 0], ["この先、わたしに合う恋はある？", 2]]]];
+  var READ=[["この恋は、まだ決まった形のない、始まりの空気の中にあります。考えすぎて動けなくなるより、軽やかな一言の方が、今のあなたらしさが伝わりやすい時です。", "勢いだけで、大事なことまで決めてしまうこと", "スニーカー", "送るなら、短い一言だけにしてみる"], ["あなたはもう、気持ちを伝える言葉も、関係を動かす力も持っています。きっかけは、あなたの側にあると映っています。", "相手の反応を、思いどおりに動かそうとすること", "ボールペン", "伝えたい一言を、メモに1行だけ書く"], ["今は、外に答えを探すより、あなたの心の奥にある本音を静かに聴く時。相手の気持ちも、急いで確かめるほど見えにくくなります。", "沈黙を、悪い方へ想像しすぎること", "白いハンカチ", "今夜は送らず、本音を3行だけ書き出す"], ["愛情を注げるあなたのやさしさが、そのまま魅力になっています。まず自分を満たすほど、ふたりの関係にもあたたかさが戻ってきます。", "尽くしすぎて、自分が空っぽになること", "ハンドクリーム", "今日は自分のために、好きな物を1つ選ぶ"], ["この恋に必要なのは、あなた自身のペースと線引き。相手に合わせ続けるより、「わたしはこうしたい」を持つことで、関係が落ち着いていきます。", "不安から、相手を思いどおりにしようとすること", "手帳", "連絡を待つ時間を、自分で決めておく"], ["ふたりのあいだの約束や、信頼できる人の言葉が、今のあなたの支えになります。ひとりで抱え込まなくていい、と映っています。", "「普通はこう」で、自分を責めること", "温かいお茶", "信頼できる友だちに、少しだけ話してみる"], ["心が本当に惹かれているもの、選びたいものがはっきりしてくる時。あなたの素直な気持ちが、ふたりの関係の鍵になっています。", "相手の答えだけで、自分の気持ちまで決めること", "お気に入りの香りの物", "「わたしは本当はどうしたい？」を1行書く"], ["気持ちを前に進めたい力が、あなたの中に満ちています。ただ、勢いのまま走るより、向きを決めてから動く方がうまくいきやすい流れです。", "気持ちのまま、続けて送ってしまうこと", "腕時計", "送るなら時間を決めて、一度だけ"], ["不安な気持ちを、やさしくなだめられる強さが、あなたにはあります。焦りを落ち着かせるほど、相手にもあなたの穏やかさが伝わります。", "我慢しすぎて、あとで一気にあふれること", "ブランケット", "深呼吸を3回してから、スマホを置く"], ["今は、ひとりで考える時間が、あなたにも、もしかしたら相手にも必要な時期。距離は、終わりではなく、整える時間とも読めます。", "連絡がないことを、拒絶だと決めつけること", "読みかけの本", "今夜はスマホを遠くに置いて、早めに休む"], ["流れは、いつまでも同じではありません。止まって見える今も、少しずつ動いています。変えられない相手より、変えられる自分に目を向ける時。", "タイミングを焦って、無理に動かそうとすること", "カレンダー", "次に動く日を、カレンダーに1つ決める"], ["事実を落ち着いて見ることで、見えてくるものがあります。あなたも相手も責めずに、公平に見つめ直す時と映っています。", "想像だけで、白黒をつけようとすること", "メモ帳", "起きた事実だけを、3つ書き出す"], ["今は、無理に動かず、待つことに意味がある時。見る角度を少し変えるだけで、相手の行動の受け取り方が変わるかもしれません。", "待つことを、ただの我慢にしてしまうこと", "ホットアイマスク", "「相手の立場なら？」を1つ考えてみる"], ["ひとつの区切りが来ている、と映っています。それは恋の終わりとは限らず、古い不安のくせを手放して、関係が新しい形に変わる合図とも読めます。", "終わりをこわがって、しがみつくこと", "新しい歯ブラシ", "やめたいくせを1つ決める（例：夜中に送らない）"], ["ふたりの距離は、少しずつ混ざり合うように近づいていく流れ。一気に答えを出すより、ちょうどいい連絡の間隔を探す時です。", "送りすぎる・黙りすぎる、どちらかに偏ること", "マグカップ", "連絡のペースを、相手と自分の真ん中に置く"], ["頭から離れない、手放せない気持ちに気づく時。それだけ大切に思っている証でもあります。ただ、その気持ちがあなたを苦しめていないか、見つめてみてください。", "不安から、確かめる連絡を重ねること", "好きな入浴剤", "今夜だけ、相手のSNSを見ないと決める"], ["思い込みや、無理に保ってきた形が揺らぐ時。こわく見えても、本当の気持ちに気づくきっかけになるカードです。", "動揺したまま、大きなことを決めること", "お気に入りのクッション", "一晩おいてから、どうしたいかを考える"], ["小さくても、確かな希望が灯っています。まずあなた自身の心を回復させることで、この恋にもやわらかな光が戻ってきます。", "期待しすぎて、自分を後回しにすること", "グラス一杯の水", "今日うれしかったことを1つ書く"], ["不安や想像がふくらみやすい時。見えないことが多いほど、心は悪い方へ物語を作ってしまいます。事実と想像を分けると、少し楽になります。", "夜中の想像で、結論を出すこと", "やわらかい灯りのライト", "事実を1つ、想像を1つ、分けて書く"], ["素直さと明るさが、この恋を照らしています。うれしいことは「うれしい」と伝えていい時。あなたの笑顔が、いちばんの魅力です。", "はしゃぎすぎて、相手のペースを置いていくこと", "黄色い小物", "うれしかったことを、短く1つ伝える"], ["もう一度向き合う、答えを出す準備が整いつつある時。過去のすれ違いも、言葉にし直すことで、新しい流れに変わる可能性があります。", "過去の失敗を、何度も責め直すこと", "好きな音楽", "伝え直したい一言を、下書きしてみる"], ["ひとつの流れが、きれいにまとまっていく時。ここまで向き合ってきたあなた自身を、まず認めてあげてください。それが、次の幸せの土台になります。", "完璧な答えを求めすぎること", "小さな花", "ここまでの自分に「よくやったね」と言う"]];
+  var CARDS=[
+    ["0","愚者","考えすぎを、いったん手放してみる時。身軽な一歩は何？"],["1","魔術師","もう持っているもので始められる。言葉にしてみたい気持ちは？"],
+    ["2","女教皇","急いで答えを出さず、静かに本音を聴く時"],["3","女帝","まず自分を満たす。わたしを大切にできていますか？"],
+    ["4","皇帝","自分のペースと、ここまでという線を決める時"],["5","教皇","信頼できる人に話してみる。ふたりの約束を確かめる"],
+    ["6","恋人","心が本当に選びたいものは、どれ？"],["7","戦車","気持ちを決めて進む力。ただし勢いだけで走らない"],
+    ["8","力","不安を責めずに、やさしくなだめる強さ"],["9","隠者","ひとりで考える時間が必要かもしれない"],
+    ["10","運命の輪","流れは変わっていく。自分にできることに集中する"],["11","正義","事実を公平に見る。自分にも相手にもフェアに"],
+    ["12","吊るされた男","いったん待つ。見る角度を変えてみる時"],["13","死神","区切りの時。手放したい古いくせは？"],
+    ["14","節制","ちょうどいいバランス。少しずつ近づく"],["15","悪魔","やめたいのにやめられないことに、気づく時"],
+    ["16","塔","思い込みが崩れるきっかけ。見直しのチャンス"],["17","星","小さな希望。まず自分を回復させる"],
+    ["18","月","想像がふくらみやすい時。事実と想像を分けて"],["19","太陽","素直さと明るさ。うれしいことを、うれしいと言う"],
+    ["20","審判","もう一度向き合う。答えを出す準備はできている？"],["21","世界","ひと区切り。ここまでの自分を認めてあげる"]
+  ];
+  var st={moon:null,q:null,card:null};
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+  function unlock(n,t){var s=$("st"+n);s.classList.remove("lock");if(t!==undefined)$("hint"+n).textContent=t;}
+  function go(n){var e=$("st"+n);try{e.scrollIntoView({behavior:"smooth",block:"start"})}catch(x){e.scrollIntoView()}}
+  function pressOnly(box,btn){[].forEach.call(box.children,function(x){x.setAttribute("aria-pressed","false")});btn.setAttribute("aria-pressed","true")}
+  var DRAW_OFF="🃏 カードを1枚引く<small>上の質問を1つ選ぶと押せます</small>",DRAW_ON="🃏 カードを1枚引く<small>押すと、22枚の中から1枚が出ます</small>";
+
+  MOONS.forEach(function(m){
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed","false");
+    b.innerHTML="<b>"+esc(m[0]+" "+m[1]+"｜"+m[2])+"</b><span>例："+esc(m[3])+"</span>";
+    b.onclick=function(){
+      pressOnly($("moonBtns"),b);st.moon=m;st.q=null;
+      $("moonOut").hidden=false;
+      $("moonOut").innerHTML="送るか待つかの目安：<b>"+esc(m[4])+"</b><br>次は、下の②で質問を1つ選びます。";
+      var qb=$("qBtns");qb.innerHTML="";
+      m[6].forEach(function(qq){var q=qq[0];var x=document.createElement("button");x.type="button";x.setAttribute("aria-pressed","false");x.innerHTML="<b>"+esc(q)+"</b>";
+        x.onclick=function(){pressOnly(qb,x);st.q=q;st.qf=qq[1];$("drawBtn").disabled=false;$("drawBtn").innerHTML=DRAW_ON;};qb.appendChild(x);});
+      $("drawBtn").disabled=true;$("drawBtn").innerHTML=DRAW_OFF;$("cardOut").hidden=true;
+      unlock(2,"質問を1つ押して、心の中でくり返しながら、カードを引いてください。");setTimeout(function(){go(2)},250);
+    };
+    $("moonBtns").appendChild(b);
+  });
+
+  $("drawBtn").onclick=function(){
+    if(!st.q)return;
+    var n=Math.floor(Math.random()*22);try{var a=new Uint32Array(1);crypto.getRandomValues(a);n=a[0]%22;}catch(e){}
+    var c=CARDS[n],r=READ[n];st.card=c;
+    var pre=st.qf===1?"相手の本当の気持ちは、カードにもわたしにも言い切れません。そのうえで、このカードが映しているのは、こんな流れです。<br>":(st.qf===2?"この先のことは、言い切れません。そのうえで、このカードが映しているのは、こんな流れです。<br>":"");
+    $("cardOut").hidden=false;
+    $("cardOut").innerHTML=esc(st.moon[0]+" "+st.moon[1]+"のあなたへ。"+st.moon[5])+"<br><br>「"+esc(st.q)+"」<br>出たカード：<b>【"+esc(c[1])+"】</b><br><br>"+pre+esc(r[0])+"<br><br>△気をつけたいこと：<b>"+esc(r[1])+"</b><br>🍀ラッキーアイテム：<b>"+esc(r[2])+"</b><br>今日の一歩の例：<b>"+esc(r[3])+"</b><br><br>送りたいLINEがある時は、下の③で、送る前にチェックしてみてください。";
+    unlock(3,"送りたい文がある人は、送る前にここで一度チェックしてください。");unlock(4,"");setTimeout(function(){go(3)},600);
+  };
+
+  // 送る前チェック：言葉のくせを見つけて、相手にどう届きやすいかと、言いかえの例を出す（ページの中だけで判定・外には送らない）
+  var RULES=[
+    {w:3,re:/聞いてる[のん]?[？?]|分かってる[のん]?[？?]|わかってる[のん]?[？?]|ちゃんと読んだ|話聞いてた/,name:"問いつめているように聞こえる言葉",recv:"相手は「責められている」と感じて、返事をしにくくなりやすいです。",alt:"ちゃんと伝わってるかな、って少し不安になっちゃった"},
+    {w:3,re:/なんで|どうして|なぜ/,name:"「なんで・どうして」",recv:"理由を問いただされているように届き、相手は言い訳を考える気持ちになりやすいです。",alt:"わたし、ちょっとさみしかったみたい"},
+    {w:3,re:/既読|返事して|返信して|返事まだ|返信まだ|無視|スルー|見た[？?]|読んだ[？?]/,name:"返事を確かめる・急かす言葉",recv:"「早く返して」という圧として届きやすく、かえって返しにくくなることがあります。",alt:"返事はいつでも大丈夫だよ。おつかれさま"},
+    {w:3,re:/もういい|別れ|嫌いになった|嫌になった|冷めた|どうでもいい|好きじゃない|終わり/,name:"相手の気持ちを試す言葉",recv:"本心ではなくても、相手は「試されている」と感じて、距離を取りたくなることがあります。",alt:"少しさみしくなっちゃった。また話せたらうれしいな"},
+    {w:3,re:/誰と|だれと|どこにいる|どこ行|何してた|なにしてた|女の子|飲み会/,name:"相手の行動を確かめる言葉",recv:"見張られているように感じやすく、自由を守りたい気持ちが強くなることがあります。",alt:"楽しめたならよかった。今度話を聞かせてね"},
+    {w:2,re:/起きてる|待ってる|待ってた|寝ないで|ずっと/,name:"「待っている」を伝える言葉",recv:"やさしさのつもりでも、「返さなきゃ」というプレッシャーとして届きやすいです。",alt:"おやすみ。また明日話せたらうれしいな"},
+    {w:2,re:/(の|ん)[？?]|でしょ[？?]|よね[？?]|じゃん[？?]/,name:"「〜の？」「〜でしょ？」の問いかけ",recv:"語尾によっては、答えを決めつけて問いつめているように聞こえることがあります。",alt:"「〜かな？」「〜だったらうれしいな」のように、やわらかく終わらせる",tf:1},
+    {w:1,re:/ごめん.*ごめん|私なんか|わたしなんか|重いよね|迷惑だよね/,name:"謝りすぎ・自分を下げる言葉",recv:"相手は「大丈夫だよ」と言わなきゃいけない気がして、少し疲れてしまうことがあります。",alt:"気持ちを伝えたかっただけだよ"}
+  ];
+  var SOFT=/ありがとう|おつかれ|お疲れ|うれし|嬉し|楽しかった|無理しないで|大丈夫だよ/;
+  var TPL={"新月さん":["最近どうしてるかなって、ふと思って連絡しました🌙","この前話してたお店、行ってみたくなって。今度一緒にどうかな？"],
+    "三日月さん":["返事はいつでも大丈夫だよ。おつかれさま🌙","落ち着いたら、また話せたらうれしいな"],
+    "半月さん":["最近忙しそうだね。無理しないでね","この前の話、今度ゆっくり聞かせてね"],
+    "満月さん":["会いたいなって思ってた。都合のいい日があったら教えてね","今度会えたら、話したいことがあるんだ🌙"],
+    "下弦の月さん":["今日は少し休むね。また話せたらうれしいな","最近ちょっと疲れてて、返事ゆっくりになるかも"]};
+  $("checkBtn").onclick=function(){
+    var t=$("msgIn").value.trim(),o=$("checkOut");o.hidden=false;
+    if(!t){o.innerHTML="送りたい文を、上の欄に貼るか書いてください。";return}
+    var len=t.replace(/\s/g,"").length,qs=(t.match(/[？?]/g)||[]).length,lines=t.split(/\n+|。/).filter(function(x){return x.trim()}).length;
+    var h=new Date().getHours(),night=(h>=23||h<5),score=0,found=[];
+    RULES.forEach(function(r){var m=t.match(r.re);if(m){score+=r.w;found.push({r:r,word:m[0]});}});
+    var extra=[];
+    if(len>80){score+=1;extra.push("<b>少し長めです（"+len+"文字）。</b>長い文は、気持ちが重く届きやすくなります。伝えたいことを1つにしぼってみてください。");}
+    if(qs>=2){score+=1;extra.push("<b>質問が"+qs+"つあります。</b>質問が続くと、答えを迫られているように感じやすくなります。質問は1つまでに。");}
+    if(lines>=4){score+=1;extra.push("<b>文がいくつも続いています。</b>何通にも分けて送るより、1通・短くがおすすめです。");}
+    if(night){score+=1;extra.push("<b>今は夜おそい時間です。</b>夜中に書いた文は、朝に読み返すと、印象が変わることがあります。");}
+    var verdict,mark;
+    if(score>=3){verdict="今は送らずに、一晩おくのがおすすめです";mark="🌘";}
+    else if(score>=1){verdict="少し言いかえてから送ると、気持ちが伝わりやすくなりそうです";mark="🌓";}
+    else if(SOFT.test(t)){verdict="やわらかく伝わりそうな文です";mark="🌕";}
+    else {verdict="責める言葉は見つかりませんでした。送る前に、もう一度だけ声に出して読んでみてください";mark="🌒";}
+    // 相手が受け取りやすい文の提案（1文ずつ見て、気になる言葉がある文は言いかえ、残りはやわらげる）
+    var parts=t.replace(/([。！!？?\n])/g,"$1\u0001").split("\u0001").map(function(x){return x.replace(/\n/g,"").trim()}).filter(Boolean);
+    var sug=[],alts=[],usedAlt={},hasAlt=false;
+    parts.forEach(function(sen){
+      var hitR=null;RULES.forEach(function(r){if(!hitR&&!r.tf&&r.re.test(sen))hitR=r});
+      if(hitR){if(!usedAlt[hitR.alt]){usedAlt[hitR.alt]=1;alts.push(hitR.alt+"。");hasAlt=true;}return;}
+      var x=sen.replace(/(の|ん|でしょ|よね|じゃん)([？?])$/,"かな？");
+      if(/[？?]$/.test(x)&&sug.some(function(y){return/[？?]$/.test(y)}))return;
+      sug.push(/[。！!？?]$/.test(x)?x:x+"。");
+    });
+    sug=alts.length?sug.slice(0,1).concat(alts).slice(0,2):sug.slice(0,3);
+    var mname0=st.moon?st.moon[1]:"",tp0=(TPL[mname0]||[]);
+    var optA=sug.join("").replace(/。。/g,"。"),optB=tp0[0]||"おつかれさま。無理しないでね🌙";
+    var html="<b>"+mark+" チェックの結果："+esc(verdict)+"</b>";
+    html+="<br><br><b>相手が受け取りやすい形にすると</b>";
+    html+="<div class=\"sugg\"><span class=\"tag\">A　気持ちを、やさしく伝える</span><p id=\"sugA\">"+esc(optA)+"</p><button class=\"sub cp\" type=\"button\" data-t=\"sugA\">この文をコピー</button></div>";
+    html+="<div class=\"sugg\"><span class=\"tag\">B　短く、軽く</span><p id=\"sugB\">"+esc(optB)+"</p><button class=\"sub cp\" type=\"button\" data-t=\"sugB\">この文をコピー</button></div>";
+    html+="<div class=\"sugg\"><span class=\"tag\">C　今夜は送らない</span><p>この文は送らずに、スマホのメモに残して、明日の朝もう一度読んでみてください。朝も同じ気持ちなら、A か B の形で。</p></div>";
+    html+="<span class=\"note\">A は、あなたの文の気になる所を言いかえて、ほかの所をやわらげたものです。自分の言葉に直して使ってください。</span>";
+    if(found.length){html+="<br><br><b>なぜ言いかえたか</b>";
+      found.forEach(function(f){html+="<br><br>「"+esc(f.word)+"」…"+esc(f.r.name)+"<br>→ "+esc(f.r.recv)+"<br>言いかえの例：<b>「"+esc(f.r.alt)+"」</b>";});}
+    if(extra.length)html+="<br><br>・"+extra.join("<br>・");
+    if(score>=1)html+="<br><br><b>ひとつのコツ</b><br>「あなたは〜」ではなく「わたしは〜だった」と、自分の気持ちを主語にすると、責める感じがやわらぎます。";
+    if(st.card)html+="<br><br>今日のカード【"+esc(st.card[1])+"】の気をつけたいこと：<b>"+esc(READ[+st.card[0]][1])+"</b>";
+    html+="<br><br><span class=\"note\">これは言葉のくせを見るチェックです。送るか待つかは、あなたが決めてください。あなたの状況に合わせて読んでほしい時は、下の④へ。</span>";
+    o.innerHTML=html;
+    [].forEach.call(o.querySelectorAll(".cp"),function(btn){btn.onclick=function(){var tx=$(btn.getAttribute("data-t")).textContent;
+      function ok(){btn.textContent="コピーしました"}
+      function fb(){var ta=document.createElement("textarea");ta.value=tx;document.body.appendChild(ta);ta.select();var r=false;try{r=document.execCommand("copy")}catch(e){}document.body.removeChild(ta);btn.textContent=r?"コピーしました":"文字を長押しでコピーしてください"}
+      try{navigator.clipboard.writeText(tx).then(ok,fb)}catch(e){fb()}};});
+    try{o.scrollIntoView({behavior:"smooth",block:"nearest"})}catch(e){}
+  };
+
+  $("arcanaTable").innerHTML="<tr><th>カード</th><th>ひとことの読み方</th></tr>"+CARDS.map(function(c){return"<tr><td>"+esc(c[0]+" "+c[1])+"</td><td>"+esc(c[2])+"</td></tr>"}).join("");
+})();
+</script>
+</body>
+</html>

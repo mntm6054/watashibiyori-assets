@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>23歳の私を、ことづて鑑定で視てみた｜わたし日和</title>
+<meta name="description" content="タロットで、ここまで分かる。23歳の私の本当の場面を、ことづて鑑定の形で視てみました（わたし日和）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* 読み物：送りすぎてブロックされた私が、あの頃の私に教えたい「送る前の順番」 */
+  :root{--night:#141a3a;--navy:#2a3168;--gold:#d9b872;--gold-l:#f1dda5;--sakura:#e9b8c6;--cream:#fbf5ea;--sub:#c9c3dc;--line:#06c755;
+    --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;--sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{color:var(--cream);font-family:var(--sans);line-height:1.85;-webkit-text-size-adjust:100%;
+    background:linear-gradient(180deg,#141a3a 0%,#1f2756 45%,#2a3168 100%) fixed;background-color:var(--night)}
+  .wrap{max-width:540px;margin:0 auto;padding:0 16px 56px}
+  .hero{position:relative;margin:0 -16px}
+  .hero img{display:block;width:100%;height:auto}
+  .hero .title{position:absolute;left:16px;top:50%;transform:translateY(-50%);max-width:58%}
+  .brand{font-size:11px;letter-spacing:.3em;color:var(--gold-l)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(19px,5.4vw,26px);line-height:1.5;margin:4px 0 0;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55);text-wrap:balance}
+  h1 small{display:block;font-size:.6em;color:var(--gold-l);font-weight:500}
+  .lead{font-size:15px;margin:18px 0 6px}
+  .who{font-size:13.5px;color:var(--sub);margin:0}
+  .step{margin-top:28px;border:1px solid rgba(217,184,114,.4);border-radius:18px;padding:16px;background:rgba(251,245,234,.05);scroll-margin-top:12px}
+  .step.lock{opacity:.45}
+  .step.lock .body{display:none}
+  .shead{display:flex;gap:10px;align-items:center}
+  .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--night);font-weight:700;display:grid;place-items:center;font-family:var(--serif);font-size:17px}
+  .step.lock .num{background:transparent;border:1px solid var(--gold);color:var(--gold-l)}
+  h2{font-family:var(--serif);font-size:18px;color:#fff;margin:0;line-height:1.5;text-wrap:balance}
+  .hint{font-size:13px;color:var(--sub);margin:6px 0 0 44px}
+  .body{margin-top:12px}
+  .choice{display:grid;gap:8px}
+  .choice button{font:inherit;text-align:left;color:var(--cream);background:rgba(251,245,234,.06);border:1px solid rgba(217,184,114,.45);border-radius:14px;padding:12px;cursor:pointer;line-height:1.6}
+  .choice button b{display:block;font-size:15.5px;color:#fff}
+  .choice button span{display:block;font-size:12.5px;color:var(--sub)}
+  .choice button[aria-pressed="true"]{background:rgba(217,184,114,.22);box-shadow:0 0 0 2px var(--gold) inset}
+  .out{background:rgba(20,26,58,.6);border-radius:12px;padding:12px;margin-top:10px;font-size:14.5px}
+  .out b{color:#fff}
+  .big{display:block;width:100%;font:inherit;font-size:18px;font-weight:700;color:var(--night);background:linear-gradient(180deg,var(--gold-l),var(--gold));border:0;border-radius:16px;padding:18px 12px;cursor:pointer;box-shadow:0 8px 22px rgba(217,184,114,.28);text-align:center;text-decoration:none}
+  .big:disabled{opacity:.5;cursor:default}
+  .big small{display:block;font-size:12px;font-weight:500;opacity:.85}
+  .big.line{background:var(--line);color:#fff;box-shadow:0 8px 22px rgba(6,199,85,.25)}
+  .sub{display:block;width:100%;font:inherit;font-size:14px;color:var(--gold-l);background:transparent;border:1px solid var(--gold);border-radius:999px;padding:10px;margin-top:10px;cursor:pointer}
+  label{display:block;font-size:13.5px;color:var(--gold-l);margin:12px 0 4px}
+  textarea{width:100%;font:inherit;font-size:16px;line-height:1.6;color:#fff;background:rgba(251,245,234,.08);border:1px solid rgba(217,184,114,.45);border-radius:12px;padding:10px;min-height:70px;resize:vertical}
+  .saved{font-size:13px;color:var(--gold-l);min-height:1.4em;margin-top:6px}
+  .log{font-size:13px;color:var(--sub);margin-top:10px}
+  .log ul{padding-left:1.2em;margin:4px 0 0}
+  button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid var(--sakura);outline-offset:2px}
+  .more{margin-top:36px}
+  .more h3{font-family:var(--serif);font-size:16px;color:var(--gold-l);text-align:center;margin:0 0 8px}
+  details{border-bottom:1px solid rgba(217,184,114,.25);padding:12px 2px}
+  summary{cursor:pointer;color:#fff;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"＋ ";color:var(--gold)}
+  details[open] summary::before{content:"－ "}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.7;margin-top:8px}
+  th,td{padding:8px 6px;border-bottom:1px dashed rgba(217,184,114,.28);vertical-align:top;text-align:left}
+  th{color:var(--gold-l);font-weight:500;font-size:12px}
+  td:first-child{color:#fff}
+  .sugg{background:rgba(251,245,234,.07);border:1px solid rgba(217,184,114,.4);border-radius:12px;padding:10px 12px;margin-top:10px}
+  .sugg p{margin:6px 0 0;color:#fff;font-size:15px}
+  .tag{font-size:12px;color:var(--gold-l)}
+  .foot{font-size:12px;color:var(--sub);margin-top:28px}
+  .pic{display:block;width:100%;height:auto;border-radius:14px;margin-top:28px}
+</style>
+<style>
+  .story{margin-top:22px;font-size:15.5px}
+  .story p{margin:0 0 14px}
+  .sent{border-left:3px solid var(--sakura);padding:4px 0 4px 12px;margin:10px 0 14px;color:#fff;font-size:15.5px}
+  .flip{margin:26px 0 6px;padding:16px;border-radius:16px;background:rgba(217,184,114,.16);border:1px solid var(--gold);text-align:center;font-family:var(--serif);font-size:18px;color:#fff;line-height:1.7}
+  .flip small{display:block;font-size:12.5px;color:var(--gold-l);font-family:var(--sans)}
+  .step p{margin:10px 0 0;font-size:15px}
+  .ex{background:rgba(20,26,58,.6);border-radius:12px;padding:10px 12px;margin-top:10px;font-size:14px}
+  .ex b{color:#fff}
+  a.inline{color:var(--gold-l)}
+  .cards3{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}
+  .cards3 figure{margin:0;text-align:center}
+  .cards3 img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(217,184,114,.5)}
+  .cards3 figcaption{font-size:10.5px;color:var(--gold-l);margin-top:4px;line-height:1.4}
+  .rd{margin-top:18px}
+  .rd h3{font-family:var(--serif);font-size:16.5px;color:#fff;margin:0 0 4px}
+  .rd h3 span{font-size:12.5px;color:var(--gold-l);font-family:var(--sans);margin-right:6px}
+  .rd p{margin:0 0 6px;font-size:15px}
+  .know{margin-top:26px;border:1px solid var(--gold);border-radius:16px;padding:14px 16px;background:rgba(217,184,114,.12)}
+  .know h2{font-size:17px}
+  .know ol{margin:8px 0 0;padding-left:1.3em;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <img src="shitsumon/01_header.jpg" alt="夜空の満月と、3枚のタロットカード" width="1200" height="800">
+    <div class="title">
+      <div class="brand">WATASHI BIYORI</div>
+      <h1><small>タロットで、ここまで分かる</small>23歳の私を、<br><span style="white-space:nowrap">ことづて鑑定で</span><span style="white-space:nowrap">視てみた</span></h1>
+    </div>
+  </div>
+
+  <div class="flip" style="margin-top:18px;text-align:left;font-size:16px">
+    <small style="text-align:center">23歳の私が送ろうとしていたLINEが、<br>ことづて鑑定でこう変わる</small>
+    <span style="display:block;margin-top:8px;color:var(--sub);font-family:var(--sans);font-size:14px">Before</span>「既読スルー？」
+    <span style="display:block;margin-top:10px;color:var(--gold-l);font-family:var(--sans);font-size:14px">After</span>「忙しい時期だよね。返事はいつでも大丈夫。落ち着いたら、少し声が聞けたらうれしいな」
+  </div>
+
+  <div class="story">
+    <p>過去に、好きな人にLINEを送りすぎて、ブロックされたことがあります。</p>
+    <p>それとは別の話ですが、23歳のころ、仕事ですれ違いが続いた彼に、こんなLINEを送っていました。</p>
+    <div class="sent">「既読スルー？」<br>「忙しいの？」<br>「連絡くれるまで起きてるから。」<br>「もう嫌になった？」</div>
+    <p>送りながら、頭の中はずっと「別れようって言われるのかな」「私、何かしたかな」でいっぱいでした。</p>
+    <p>もしあの夜の私が、わたし日和のおすすめの「ことづて鑑定」を受けていたら、どんな鑑定書が届くのか。今の私が、実際にカードを5枚引いて、見本を作りました。</p>
+    <p class="who">お客様の鑑定は、ご本人の許可なく載せられません。だから、わたし自身の過去の場面で見本を作りました。</p>
+  </div>
+
+  <section class="step">
+    <div class="shead"><div class="num">？</div><h2>23歳の私の相談</h2></div>
+    <p>仕事ですれ違いが続く彼。既読のまま、返事がこない。<br>送ろうとしている文：<b>「既読スルー？」</b></p>
+    <div class="cards3"><figure><img src="cards/29.jpg" alt="ワンドの7のカード"><figcaption>1 今のわたし<br>ワンドの7</figcaption></figure><figure><img src="cards/37.jpg" alt="カップのエースのカード"><figcaption>2 今のふたり<br>カップのエース</figcaption></figure><figure><img src="cards/03.jpg" alt="女教皇のカード"><figcaption>3 彼の内側<br>女教皇</figcaption></figure><figure><img src="cards/51.jpg" alt="ソードのエースのカード"><figcaption>4 気をつけたいこと<br>ソードのエース</figcaption></figure><figure><img src="cards/27.jpg" alt="ワンドの5のカード"><figcaption>5 これからの流れ<br>ワンドの5</figcaption></figure></div>
+    <p class="who" style="margin-top:10px">※見本です。実際の鑑定書（4,000〜5,500字）から、大事なところをまとめて載せています。</p>
+
+    <details style="border:0;padding:6px 0 0"><summary>5枚の読みと、迷いの背景をくわしく見る</summary>
+    <div class="rd"><h3><span>1 今のわたし</span>ワンドの7</h3>
+      <p>守りの姿勢で、ひとりで踏ん張っているカードです。関係を失わないように、ずっと身構えている状態と出ています。</p></div>
+    <div class="rd"><h3><span>2 今のふたり</span>カップのエース</h3>
+      <p>あふれる気持ちのカードです。ふたりの間の想いは、まだ枯れていないと出ています。</p></div>
+    <div class="rd"><h3><span>3 彼の内側</span>女教皇</h3>
+      <p>言葉にしないで、内側で静かに考えるカードです。彼は今、気持ちを言葉にする余裕がない状態なのかもしれません。（カードに出ていることで、彼の気持ちを言い切るものではありません）</p></div>
+    <div class="rd"><h3><span>4 気をつけたいこと</span>ソードのエース</h3>
+      <p>はっきりさせたい気持ちが、言葉の刃になりやすいカードです。「既読スルー？」のように白黒をつける問いは、相手には切っ先のように届くことがあります。</p></div>
+    <div class="rd"><h3><span>5 これからの流れ</span>ワンドの5</h3>
+      <p>小さなぶつかり合いが起きやすい流れです。ただ、ワンドの5は、本気で関わり合うからこその摩擦。言葉の選び方しだいで、話し合うきっかけにも変わります。</p></div>
+
+    <div class="rd"><h3><span>5枚をひとつの流れとして</span>想いは残っている。だからこそ、言葉を選ぶ時</h3>
+      <p>ふたりの想いはまだあり（カップのエース）、彼は内側で静かに考えている（女教皇）。そこへ、守りに入ったわたし（ワンドの7）が白黒をつける言葉（ソードのエース）を送ると、ぶつかり合い（ワンドの5）になりやすい。そんな流れが出ています。</p></div>
+    <div class="rd"><h3><span>迷いの背景</span>「返事がない＝気持ちが冷めた」と結びつけてしまう不安</h3>
+      <p>本当に起きているのは「返事が遅い」「仕事が忙しい時期」ということ。そこに「嫌われたのかも」という想像が重なって、送る言葉がとがっていました。</p></div>
+    </details>
+    <div class="rd"><h3><span>送るか待つかの目安</span>待つ寄り。送るなら一度だけ、問いではなく気持ちを</h3></div>
+
+    <div class="ex"><b>ことづて鑑定：送ろうとしていた文を、一緒に仕上げると</b><br>
+      送ろうとしていた文：「既読スルー？」<br><br>
+      <b>仕上げ案A：「忙しい時期だよね。返事はいつでも大丈夫。落ち着いたら、少し声が聞けたらうれしいな」</b><br>
+      <b>仕上げ案B：「最近会えなくて、ちょっとさみしいです。無理しないでね」</b><br><br>
+      変えたところ：①問いつめる「？」をやめて、自分の気持ちを伝える形に ②返事をしなくても大丈夫な言葉にして、相手の負担を軽く ③1通で終わる長さに<br>
+      このあと、あなたの言葉で仕上げるやりとりが2往復までできます。</div>
+    <p>この見本を作りながら、あの夜の私に、この2つの文を渡してあげたかったと思いました。</p>
+  </section>
+
+  <div class="know">
+    <h2>ことづて鑑定（7,980円・おすすめ）で分かること・できること</h2>
+    <ol>
+      <li><b>5枚それぞれのメッセージ</b>：カードの意味と、あなたのお悩みに重ねた読み</li>
+      <li><b>ふたりのこの先の流れ</b>：5枚をひとつの流れとして読んだ、これからの流れ（未来を言い切るものではありません）</li>
+      <li><b>迷ってしまう理由</b>：送るか待つかで止まってしまう、不安の正体</li>
+      <li><b>決める前に確かめたいこと</b>と、<b>これからの向き合い方</b></li>
+      <li><b>あなたが送ろうとしている文を、一緒に仕上げる</b>：仕上げ案2つと、どこをどう変えたか。さらに2往復までやりとりできます</li>
+      <li><b>届いたあとの質問</b>：分かりにくい所を、LINEで1回質問できます</li>
+    </ol>
+  </div>
+
+  <div class="story" style="margin-top:22px">
+    <p><b>有料の鑑定が合うのは、こんな時です。</b></p>
+    <p>・送ろうとしている文があって、そのまま送っていいか不安な時<br>・送るか待つかの「目安」だけでなく、この先の流れまで知りたい時<br>・同じ失敗をくり返したくない時</p>
+    <p>ほかに、送る一文の例までお渡しする「星読み鑑定」（5枚・4,980円）と、1か月後の見直しまでついた「みちしるべ鑑定」（9,980円）もあります。お申し込みは、LINE「月の相談室」の画面下のメニュー【本鑑定メニュー】からどうぞ。</p>
+    <a class="big line" href="https://lin.ee/tjOetSK">LINE「月の相談室」を開く<small>画面下の【本鑑定メニュー】からお申し込みいただけます</small></a>
+  </div>
+
+  <div class="know">
+    <h2>まずは試してみたい方へ</h2>
+    <p style="margin:6px 0 0;font-size:15px">あなたが選んだ3枚のカードで、今の流れと送るか待つかの目安を読む、無料の「月のことのは鑑定」もあります（おひとり1回）。トークに【ことのは鑑定】と送ってください。<br>すぐに知りたい時は、月の絵文字（🌑🌒🌓🌕🌘）をひとつ送ると、カード1枚がすぐ届きます（1日1回）。</p>
+  </div>
+
+  <p class="foot">わたし日和／月の相談室<br>この見本は、わたし（わたし日和）自身の過去の場面をもとに作ったものです。お客様の声ではありません。<br>占いによる個人的な読み解きの提供です。カードは未来を決めるものではなく、あなたが次の一歩を選ぶための材料です。医療・法律・お金のご相談は、専門の窓口へどうぞ。</p>
+</div>
+</body>
+</html>
