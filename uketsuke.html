@@ -110,7 +110,7 @@
   </ol>
 
   <div class="now">今週の受付：<b>11/2（月）〜11/4（水）</b><br>先着<b>10名さま</b>（おひとり1回・定員になったら締め切ります）</div>
-  <a class="btn" href="https://lin.ee/tjOetSK">無料の月のことのは鑑定を受ける<small>LINE「月の相談室」に登録して【ことのは鑑定】と送るだけ</small></a>
+  <a class="btn" href="https://lin.ee/tjOetSK" onclick="hit('ukeLine')">無料の月のことのは鑑定を受ける<small>LINE「月の相談室」に登録して【ことのは鑑定】と送るだけ</small></a>
 
   <div class="orn">Q&amp;A</div>
   <h2>よくある質問</h2>
@@ -121,9 +121,14 @@
   <details><summary>いつ届きますか？</summary><p>受付から3日以内に、LINEでお届けします。</p></details>
   <details><summary>LINEの配信を止めたい時は？</summary><p>いつでもトークに「停止」と送ってください。ブロックしていただいても大丈夫です。</p></details>
 
-  <a class="btn" href="https://lin.ee/tjOetSK">無料の月のことのは鑑定を受ける<small>今週は先着10名さま</small></a>
+  <a class="btn" href="https://lin.ee/tjOetSK" onclick="hit('ukeLine')">無料の月のことのは鑑定を受ける<small>今週は先着10名さま</small></a>
 
   <p class="note">※鑑定は、占いによる個人的な読み解きです。相手の気持ちや未来を言い切ったり、結果を約束したりするものではありません。<br>わたし日和</p>
 </div>
+<script>
+const HIT_URL = "https://script.google.com/macros/s/AKfycbyJAgD4kfGKZu4HLVN0mSVwwX3rR4Y6fQsPBHQ-MUEcY0ujCiH9eg65o8WSZe4Ts_QdWw/exec?a=hit&e=";
+function hit(e){ try{ fetch(HIT_URL+e,{mode:"no-cors",keepalive:true}) }catch(err){} }
+hit("uke");
+</script>
 </body>
 </html>
