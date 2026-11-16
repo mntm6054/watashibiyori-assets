@@ -80,7 +80,7 @@ p{margin:0}
 <p>・状況が動かなくなっている原因</p>
 <p>・待つべきか、動くべきか、これからの方向性</p>
 </div>
-<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener">【星乃の相談室】に入る</a>
+<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener" onclick="hit('ukeLine')">【星乃の相談室】に入る</a>
 </section>
 
 <section>
@@ -112,7 +112,7 @@ p{margin:0}
 <p><span class="gold" style="font-size:14px">ご相談いただける内容</span><br>恋愛、復縁、不倫・複雑恋愛、結婚、夫婦関係、家族、人間関係、仕事、転職、金運、人生の転機</p>
 <div class="price"><s>通常 3,980円</s><strong>初回限定 980円</strong></div>
 <p class="sub">相談室に入ると、初回鑑定が980円になるクーポンをお届けします。<br>クーポンの有効期限は、相談室に入ってから7日間です。</p>
-<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener">相談室から鑑定を申し込む</a>
+<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener" onclick="hit('ukeLine')">相談室から鑑定を申し込む</a>
 </div>
 <div class="box card">
 <p class="num">02</p>
@@ -128,10 +128,15 @@ p{margin:0}
 <svg class="spark" viewBox="-12 -12 24 24" aria-hidden="true"><defs><radialGradient id="g"><stop offset="0" stop-color="#F6E2AE" stop-opacity=".8"/><stop offset="1" stop-color="#F6E2AE" stop-opacity="0"/></radialGradient></defs><circle cx="0" cy="0" r="6.1" fill="url(#g)" opacity="0.60"/><path d="M0.0 -11.0 L0.9 -0.9 L6.8 0.0 L0.9 0.9 L0.0 11.0 L-0.9 0.9 L-6.8 0.0 L-0.9 -0.9Z" fill="#F6E2AE" opacity="1"/></svg>
 <p class="big">知ることで、次の一歩は変えられます。</p>
 <p style="color:#D6CDB9">一度話してみようかな。<br>そう思ったら、下の入口からお入りください。</p>
-<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener">【星乃の相談室】に入る</a>
+<a class="btn" href="https://lin.ee/8nIThuZ" target="_blank" rel="noopener" onclick="hit('ukeLine')">【星乃の相談室】に入る</a>
 <p class="note">※鑑定結果は、未来を保証するものではありません。</p>
 </section>
 
 </div>
+<script>
+const HIT_URL = "https://script.google.com/macros/s/AKfycbyJAgD4kfGKZu4HLVN0mSVwwX3rR4Y6fQsPBHQ-MUEcY0ujCiH9eg65o8WSZe4Ts_QdWw/exec?a=hit&e=";
+function hit(e){ try{ fetch(HIT_URL+e,{mode:"no-cors",keepalive:true}) }catch(err){} }
+hit("uke");
+</script>
 </body>
 </html>
